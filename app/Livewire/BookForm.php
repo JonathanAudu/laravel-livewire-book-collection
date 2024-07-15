@@ -4,7 +4,6 @@ namespace App\Livewire;
 
 use App\Models\Book;
 use Livewire\Component;
-use Session;
 
 class BookForm extends Component
 {
@@ -37,7 +36,7 @@ class BookForm extends Component
 
                 session()->flash('message', 'Book successfully updated.');
                 $this->reset(['title', 'author', 'description', 'published_year', 'bookId']);
-                $this->emit('bookUpdated');
+                $this->dispatch('bookUpdated');
             }
 
         } else {
@@ -50,7 +49,7 @@ class BookForm extends Component
 
             session()->flash('message', 'Book successfully added.');
             $this->reset(['title', 'author', 'description', 'published_year', 'bookId']);
-            $this->emit('bookAdded');
+            $this->dispatch('bookAdded');
         }
     }
 
@@ -72,7 +71,7 @@ class BookForm extends Component
         if ($book) {
             $book->delete();
             session()->flash('message', 'Book successfully deleted.');
-            $this->emit('bookUpdated'); // To refresh book list if needed
+            $this->emit('bookUpdated');
         }
     }
 

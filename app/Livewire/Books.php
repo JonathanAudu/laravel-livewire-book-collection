@@ -7,7 +7,7 @@ use Livewire\Component;
 
 class Books extends Component
 {
-    protected $listeners = ['bookUpdated' => '$refresh'];
+    protected $listeners = ['bookUpdated' => '$refresh', 'bookAdded' => '$refresh'];
 
     public function render()
     {

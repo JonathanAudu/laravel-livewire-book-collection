@@ -1,5 +1,5 @@
 <div class="p-4 mb-4 bg-white rounded shadow">
-    <h1 class="text-2xl font-bold mb-4">Book Collection</h1>
+    <h1 class="text-2xl font-bold mb-4 text-center">Book Collection</h1>
     @if (session()->has('message'))
         <div class="p-4 mb-4 bg-green-500 text-white rounded">
             {{ session('message') }}
