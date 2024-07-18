@@ -7,11 +7,11 @@ use Livewire\Component;
 
 class Books extends Component
 {
-    protected $listeners = ['bookUpdated' => '$refresh', 'bookAdded' => '$refresh'];
+
 
     public function render()
     {
-        return view('livewire.books', [
+        return view('livewire.book-form', [
             'books' => Book::all(),
         ]);
     }
